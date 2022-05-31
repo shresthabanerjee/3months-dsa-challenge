@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	   //for infinite array we dont know the high but we know that the elemnt to be searched
+	 //lies between start and end
+	  int n;int start=0 ;int target; int high=1; int arr[100];int mid;int res=0;// we are checking for finite array as infinite array inpuit is impossible
+	  std::cin >> n;
+	  
+	  for (int i = 0; i < n; i++) {
+	      cin>>arr[i];
+	  }
+	  while(arr[high]!=1)
+	  {
+	      start=high;                 
+	      high=high*2;
+	  }
+	  while(start<=high)
+	  {
+	      mid=start+(high-start)/2;
+	      if(arr[mid]==0) {
+	      start=mid+1;}
+	      else{
+	           res=mid;  //res can b a possible result but we move more left to see 1 existsts or not
+	      high=mid-1;}
+	  } 
+	      std::cout << res << std::endl;
+	      
+	      
+	  
+	  
+	  
+	   
+	return 0;
+}
