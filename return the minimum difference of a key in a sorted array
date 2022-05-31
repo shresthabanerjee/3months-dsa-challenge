@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//when key is not present the while loop terminates at a point where low an high are the neighbours of key
+	
+	int n;int arr[100];int num;int res=0;
+	std::cin >> num;
+	std::cin >> n;
+	for(int i=0;i<n;i++)
+	{
+	    std::cin >> arr[i];
+	}
+	int start=0;int end=n-1;int mid;int c;
+	while(start<=end)
+	{
+	    mid=(start+end)/2;
+	    if(arr[mid]==num)
+	    {
+	        std::cout << mid << std::endl;
+	        break;
+	        
+	    }
+	    else if(arr[mid]>num)
+	    {
+	        end=mid-1;
+	    }
+	    else
+	    {
+	        start=mid+1;
+	    }
+	    
+	}
+	res = min(abs(arr[start]-num),abs(arr[end]-num));
+	   std::cout << res << std::endl;
+	
+	   
+	
+	return 0;
+}
