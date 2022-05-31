@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	 int n;int arr[100];int target; int ceil=0;
+	 std::cin >> n;
+	 std::cin >> target;
+for(int i=0;i<n;i++)
+{
+    std::cin >> arr[i];
+}
+	  int start=0;int end=n;int mid;
+	  while(start<=end)
+	  {
+	      mid=start+(end-start)/2;
+	      if(arr[mid]>target)
+	      { ceil=arr[mid];
+	          end=mid-1;
+	      }
+	      else if(target>arr[mid])
+	      {
+	        
+	          start=mid+1;
+	      }
+	      else
+	      {
+	          
+	          std::cout << arr[mid] << std::endl;
+	          break;
+	      }
+	      
+	     
+	  }
+	  std::cout << ceil << std::endl;
+	   
+	return 0;
+}
