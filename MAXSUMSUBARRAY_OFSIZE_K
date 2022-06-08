@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int arr[1000000];int k;int n;int sum=0;int m=INT_MIN;
+	std::cin >> n;
+for (int i = 0; i < n; i++) {
+    std::cin >> arr[i];
+}
+std::cin >> k;
+int i=0,j=0;
+while(j<n){
+ sum+=arr[j];
+ if((j-i+1)<k){
+   
+    j++;}
+    if((j-i+1)==k)
+    {
+         m=max(m,sum);
+        sum=sum-arr[i];
+        i++;
+        j++;
+    }
+    
+    
+}
+std::cout << m << std::endl;
+	return 0;
+}
