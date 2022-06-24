@@ -1,0 +1,47 @@
+class Solution {
+public:
+    int maxDistance(vector<int> &position, int m) {
+        int n=position.size();
+        sort(position.begin(),position.end());
+        int start=0;int ans=0;
+        int end= position[n-1];
+        while(start<=end)
+        {
+            int mid= start+ (end-start)/2;
+            if( isvalid(position,n,m,mid))
+            {
+                ans=mid;
+                start=mid+1;
+            }
+            else
+                end=mid-1;
+            
+            
+            
+            
+            
+        }
+        return ans;
+    }
+        bool isvalid(vector<int> &position,int n,int m,int mid)
+        {
+            int c=position[0];
+            int count=1;
+            for(int i=1;i<n;i++)
+            {
+                if(position[i]-c>=mid)
+                {
+                    count++;
+                    c=position[i];
+                }
+                if(m==count) return true;
+            }
+            
+            return false;
+            
+        }
+        
+        
+        
+    
+};
